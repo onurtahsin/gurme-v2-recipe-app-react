@@ -1,5 +1,8 @@
 const theme = {
-  colors: {},
+  colors: {
+    navBgColor: "#fff",
+    mainColor: "crimson",
+  },
   screens: {},
 };
 export default theme;
