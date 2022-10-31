@@ -6,10 +6,12 @@ export const GlobalStyles = createGlobalStyle`
    margin: 0;
    padding: 0;
 font-family: 'Dancing Script', cursive;
+/* background-color: crimson; */
 
 }
 body{
     font-size:1.5rem
+    
 }
 `;
 export default GlobalStyles;

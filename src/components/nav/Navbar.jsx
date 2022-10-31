@@ -1,21 +1,30 @@
-import NavStyle from "./Navbar.styles";
-import { Link } from "react-router-dom";
+import Nav, { Logo, Menu, MenuLink, Hamburger } from "./Navbar.styles";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <NavStyle justify="space-between" wrap="wrap">
-      <div>
-        <i>{"<Gurme/>"}</i>
+    <Nav justify="space-between" wrap="wrap">
+      <Logo to="/">
+        <i>{"<Gurme?!?../>"}</i>
         <span>Recipe</span>
-      </div>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="about">About</Link>
-        <Link to="register">Register</Link>
-        <Link to="login">Logut</Link>
-        <Link to="">Register</Link>
-      </div>
-    </NavStyle>
+      </Logo>
+
+      <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <GiHamburgerMenu />
+      </Hamburger>
+
+      <Menu isOpen={isOpen} onClick={() => setIsOpen(false)}>
+        <MenuLink to="/">Home</MenuLink>
+        <MenuLink to="about">About</MenuLink>
+        <MenuLink to="register">Register</MenuLink>
+        <MenuLink to="login" onClick={() => sessionStorage.clear()}>
+          Logout
+        </MenuLink>
+      </Menu>
+    </Nav>
   );
 };
 

@@ -14,7 +14,7 @@ const Header = ({ setQuery, setSelectedMeal, mealType, getData }) => {
   };
   return (
     <HeaderContainer>
-      <MainHeader>Recipe App</MainHeader>
+      <MainHeader>Gurme?!?.. App</MainHeader>
       <FormContainer onSubmit={handleSubmit}>
         <FoodInput
           type="text"

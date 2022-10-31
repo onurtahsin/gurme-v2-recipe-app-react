@@ -3,7 +3,10 @@ import Flex from "../globalStyles/Flex";
 
 export const HeaderContainer = styled(Flex)`
   background: ${({ theme }) => theme.colors.mainColor};
+  /* background: white;
+  color: crimson; */
   flex-direction: column;
+  color: white;
 `;
 
 export const MainHeader = styled.h2`
