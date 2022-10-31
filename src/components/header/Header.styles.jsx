@@ -60,3 +60,8 @@ export const Select = styled.select`
   border: none;
   font-size: 2rem;
 `;
+export const StyledImg = styled.img`
+  width: 150px;
+  margin: 1rem;
+  margin-left: 50%;
+`;

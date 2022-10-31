@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Cards from "../../components/cards/Cards";
+import Plate from "../../img/plate.svg";
+import { StyledImg } from "../login/Login.styles";
 // import homeSvg from "../../assets/home.svg";
 const Home = () => {
   const mealType = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
@@ -41,7 +43,10 @@ const Home = () => {
       )}
 
       {recipes?.length === 0 && (
-        <HeaderText>The Food can not be found</HeaderText>
+        <>
+          <StyledImg src={Plate} />
+          <HeaderText>No food found, Maybe it was eaten</HeaderText>
+        </>
       )}
 
       {recipes?.length > 0 && <Cards recipes={recipes} />}
