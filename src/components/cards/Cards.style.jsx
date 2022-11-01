@@ -12,18 +12,9 @@ export const Card = styled(Flex)`
   padding: 0.5rem;
   border-radius: 3px;
   margin: 0.7rem;
-  color: crimson;
-  font-size: 2rem;
 
   &:hover {
-    box-shadow: none;
-    transition: all 0.3s ease-in;
-    box-shadow: rgba(255, 255, 255, 0.75) 0px 54px 55px,
-      rgba(255, 255, 255, 0.75) 0px -12px 30px,
-      rgba(255, 255, 255, 0.75) 0px 4px 6px,
-      rgba(255, 255, 255, 0.75) 0px 12px 13px,
-      rgba(255, 255, 255, 0.75) 0px -3px 5px;
-  }
+box-shadow: rgba(255, 255, 255, 0.798) 0px 2px 4px 0px, rgba(255, 255, 255, 0.798) 0px 2px 16px 0px ;
 `;
 
 export const Image = styled.img`
@@ -41,11 +32,13 @@ export const Button = styled.button`
   border-radius: 3px;
   cursor: pointer;
   &:hover {
-    opacity: 0.6;
+    opacity: 0.8;
+    /* background-color: black; */
   }
 `;
 
 export const Header = styled.h1`
+  color: crimson;
   font-size: 1.5rem;
   text-align: center;
 `;

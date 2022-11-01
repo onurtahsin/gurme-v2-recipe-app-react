@@ -1,6 +1,6 @@
-import { MainContainer, Card, Header, Image, Button } from "./Cards.styles";
-// import defaultImage from "../../assets/default-image.jpg";
-import { useNavigate } from "react-router-dom";
+import { MainContainer, Card, Header, Image, Button } from './Cards.style';
+import defaultImage from '../../assets/default-image.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const Cards = ({ recipes }) => {
   const navigate = useNavigate();
@@ -9,10 +9,10 @@ const Cards = ({ recipes }) => {
       {recipes.map(({ recipe }, index) => (
         <Card key={index}>
           <Header>{recipe.label}</Header>
-          <Image src={recipe.image || <p>burası cards</p>} />
+          <Image src={recipe.image || defaultImage} />
           <Button
             onClick={() =>
-              navigate("detail", { state: recipe, replace: false })
+              navigate('detail', { state: recipe, replace: false })
             }
           >
             View More

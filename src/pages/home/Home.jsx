@@ -1,32 +1,35 @@
-import { HeaderText, HomeImg, ImgDiv } from "./Home.styles";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Header from "../../components/header/Header";
-import Cards from "../../components/cards/Cards";
-import Plate from "../../img/plate.svg";
-import { StyledImg } from "../login/Login.styles";
-// import homeSvg from "../../assets/home.svg";
-const Home = () => {
-  const mealType = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
-  const [query, setQuery] = useState("egg");
-  const [selectedMeal, setSelectedMeal] = useState(mealType[0]);
-  const [recipes, setRecipes] = useState("");
+import { HeaderText, HomeImg, ImgDiv } from './Home.style';
+import axios from 'axios';
+import { useState } from 'react';
+import Header from '../../components/header/Header';
+import Cards from '../../components/cards/Cards';
+import homeSvg from '../../assets/home.svg';
 
-  const apiKey = "5de7c992664038498e1977584dd23e10";
-  const appId = "b94aa4b9";
-  const url = `https://api.edamam.com/api/recipes/v2?type=any&beta=false&q=${query}&app_id=${appId}&app_key=${apiKey}&mealType=${selectedMeal}`;
+const Home = () => {
+  const mealType = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Teatime'];
+  const [query, setQuery] = useState('egg');
+  const [selectedMeal, setSelectedMeal] = useState(mealType[0]);
+  const [recipes, setRecipes] = useState(null);
+
+  const APP_ID = process.env.REACT_APP_APP_ID;
+  const APP_KEY = process.env.REACT_APP_APP_KEY;
+
+  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${selectedMeal}`;
+
   const getData = async () => {
-    try {
-      const { data } = await axios.get(url);
-      setRecipes(data.hits);
-    } catch (error) {
-      console.log(error);
+    if (query) {
+      try {
+        const { data } = await axios.get(url);
+        setRecipes(data.hits);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      alert('Please Enter your meal');
     }
   };
-  useEffect(() => {
-    getData();
-  }, []);
 
+  // console.log(recipes);
   return (
     <div>
       <Header
@@ -36,17 +39,13 @@ const Home = () => {
         getData={getData}
       />
       {!recipes && (
-        // <ImgDiv>
-        //   <HomeImg src={homeSvg} />
-        // </ImgDiv>
-        <p>burası</p>
+        <ImgDiv>
+          <HomeImg src={homeSvg} />
+        </ImgDiv>
       )}
 
       {recipes?.length === 0 && (
-        <>
-          <StyledImg src={Plate} />
-          <HeaderText>No food found, Maybe it was eaten</HeaderText>
-        </>
+        <HeaderText>The Food can not be found</HeaderText>
       )}
 
       {recipes?.length > 0 && <Cards recipes={recipes} />}

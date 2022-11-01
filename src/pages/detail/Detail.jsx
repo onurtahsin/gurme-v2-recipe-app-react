@@ -1,26 +1,29 @@
+import React from "react";
 import {
   DetailContainer,
   DetailPart,
   HeaderContainer,
   ImgContainer,
-  OtherPart,
   IngContainer,
-} from "./Detail.styles";
+  OtherPart,
+} from "./Detail.style";
 import { useLocation } from "react-router-dom";
-import dietSvg from "../../assets/diet.svg";
-import defaultImage from "../../assets/default-image.jpg";
+// import diet from "../../assets/diet.svg";
+
 const Detail = () => {
   const { state } = useLocation();
-
+  console.log("state geldi mi:", state);
   return (
     <DetailContainer>
       <HeaderContainer>
-        <h1>{state.label}</h1>
-        <img src={dietSvg} alt="" />
+        <h1 style={{ color: "white" }}>{state.label} </h1>
+        {/* <img src={diet} alt={diet} /> */}
       </HeaderContainer>
-      <DetailPart wrap="wrap">
+
+      <DetailPart>
         <OtherPart>
           <h4>NUTRIENTS</h4>
+
           <p>
             {state.totalNutrients.CA.label} :{" "}
             {Math.round(state.totalNutrients.CA.quantity)}
@@ -51,16 +54,15 @@ const Detail = () => {
         </OtherPart>
 
         <ImgContainer>
-          <img src={state.image || defaultImage} alt={state.label} />
+          <img src={state.image} alt="default" />
         </ImgContainer>
 
         <IngContainer>
-          {state.ingredientLines.map((line, index) => (
-            <div key={index}>
+          {state.ingredientLines.map((ingredient, index) => (
+            <div>
               <p>
-                {index + 1} - {line}
+                {index + 1}-{ingredient}{" "}
               </p>
-              <br />
             </div>
           ))}
         </IngContainer>

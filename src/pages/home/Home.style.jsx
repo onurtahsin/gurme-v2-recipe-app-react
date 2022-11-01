@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ImgDiv = styled.div`
   display: flex;
@@ -13,6 +13,6 @@ export const HomeImg = styled.img`
 
 export const HeaderText = styled.h1`
   font-size: 2.5rem;
-  color: #ffffff;
+  color: red;
   text-align: center;
 `;

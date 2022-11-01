@@ -5,7 +5,7 @@ import {
   FoodInput,
   Button,
   Select,
-} from "./Header.styles";
+} from './Header.style';
 
 const Header = ({ setQuery, setSelectedMeal, mealType, getData }) => {
   const handleSubmit = (e) => {
@@ -14,7 +14,7 @@ const Header = ({ setQuery, setSelectedMeal, mealType, getData }) => {
   };
   return (
     <HeaderContainer>
-      <MainHeader>Gurme?!?.. App</MainHeader>
+      <MainHeader>Recipe App</MainHeader>
       <FormContainer onSubmit={handleSubmit}>
         <FoodInput
           type="text"

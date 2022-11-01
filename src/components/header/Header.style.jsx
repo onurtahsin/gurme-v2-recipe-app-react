@@ -3,15 +3,13 @@ import Flex from "../globalStyles/Flex";
 
 export const HeaderContainer = styled(Flex)`
   background: ${({ theme }) => theme.colors.mainColor};
-  /* background: white;
-  color: crimson; */
   flex-direction: column;
-  color: white;
 `;
 
 export const MainHeader = styled.h2`
   margin-top: 1rem;
   font-size: 3rem;
+  color: white;
 `;
 
 export const FormContainer = styled.form`
@@ -37,6 +35,7 @@ export const FoodInput = styled.input`
 
 export const Button = styled.button`
   background-color: #e1f1dd;
+  color: crimson;
   padding: 5px;
   outline: none;
   height: 3rem;
@@ -46,7 +45,9 @@ export const Button = styled.button`
   cursor: pointer;
   font-size: 2rem;
   &:hover {
-    background: ${({ theme }) => theme.colors.mainColor};
+    /* background: ${({ theme }) => theme.colors.mainColor}; */
+    background: white;
+    color: black;
     transition: all 0.3s ease-in;
     border: 1px solid white;
   }
@@ -59,9 +60,4 @@ export const Select = styled.select`
   height: 3rem;
   border: none;
   font-size: 2rem;
-`;
-export const StyledImg = styled.img`
-  width: 150px;
-  margin: 1rem;
-  margin-left: 50%;
 `;

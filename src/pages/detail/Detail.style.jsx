@@ -3,7 +3,7 @@ import Flex from "../../components/globalStyles/Flex";
 
 export const DetailContainer = styled(Flex)`
   flex-direction: column;
-  background: #00adb5;
+  background: crimson;
   min-height: calc(100vh - 75px);
   padding: 0.5rem;
 `;
@@ -17,7 +17,7 @@ export const DetailPart = styled(Flex)`
 `;
 
 export const ImgContainer = styled.div`
-  border: 1px solid #00adb5;
+  border: 1px solid crimson;
   padding: 10px;
   border-radius: 3px;
   margin: 2rem;

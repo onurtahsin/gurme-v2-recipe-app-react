@@ -1,4 +1,4 @@
-import Nav, { Logo, Menu, MenuLink, Hamburger } from "./Navbar.styles";
+import Nav, { Menu, MenuLink, Hamburger, Brand } from "./Navbar.style";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
 
@@ -7,10 +7,10 @@ const Navbar = () => {
 
   return (
     <Nav justify="space-between" wrap="wrap">
-      <Logo to="/">
-        <i>{"<Gurme?!?../>"}</i>
+      <Brand to="/">
+        <i>{"<Gurme?!.../>"}</i>
         <span>Recipe</span>
-      </Logo>
+      </Brand>
 
       <Hamburger onClick={() => setIsOpen(!isOpen)}>
         <GiHamburgerMenu />
